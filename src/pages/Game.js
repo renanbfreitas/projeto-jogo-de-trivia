@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Alternatives from '../components/Alternatives';
 import Header from '../components/Header';
-import Timer from '../components/Timer';
 import { hideNext, resetAlt } from '../redux/actions';
 import './game.css';
 import { Container } from './styles/game.style';
@@ -89,7 +88,7 @@ class Game extends Component {
         <Header />
         {questions.length > 0 ? (
           <>
-            <Timer />
+
             <Alternatives
               index={ index }
               questions={ questions }
