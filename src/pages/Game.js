@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Timer from '../components/Timer';
 import { hideNext, resetAlt } from '../redux/actions';
 import './game.css';
+import { Container } from './styles/game.style';
 
 class Game extends Component {
   state = {
@@ -82,10 +83,9 @@ class Game extends Component {
   render() {
     const { index, questions } = this.state;
     const { next } = this.props;
-    console.log(questions);
 
     return (
-      <>
+      <Container>
         <Header />
         {questions.length > 0 ? (
           <>
@@ -107,7 +107,7 @@ class Game extends Component {
         ) : (
           <p>Carregando...</p>
         )}
-      </>
+      </Container>
     );
   }
 }

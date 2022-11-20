@@ -3,8 +3,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchTokenAPI, userLogin } from '../redux/actions';
 import SettingsBtn from '../components/SettingsBtn';
-import { Container, Form } from './styles/styles';
+import { Container, Form } from './styles/login.style';
 import logo from '../trivia.png';
+import googleLogo from '../assets/google-logo.png';
+import appleLogo from '../assets/apple-logo.png';
+import facebookLogo from '../assets/facebook-logo.png';
 
 class Login extends React.Component {
   constructor() {
@@ -50,10 +53,18 @@ class Login extends React.Component {
     const { name, email } = this.state;
     const { isLoading, error } = this.props;
     if (error) return 'Algo deu errado!';
+    let EntrarLoading = 'Entrar';
+    if (isLoading) {
+      EntrarLoading = 'Loading...';
+    }
     return (
       <Container>
         <Form>
           <img src={ logo } alt="logo" className="logo" />
+          <div className="loginGreeting">
+            <h1>Login</h1>
+            <h3>Bem-Vindo de volta!</h3>
+          </div>
           <label htmlFor="password">
 
             <input
@@ -64,6 +75,7 @@ class Login extends React.Component {
               value={ name }
               onChange={ this.handleInput }
               data-testid="input-player-name"
+              autoComplete="off"
             />
           </label>
           <label htmlFor="email">
@@ -76,6 +88,7 @@ class Login extends React.Component {
               value={ email }
               onChange={ this.handleInput }
               data-testid="input-gravatar-email"
+              autoComplete="off"
             />
           </label>
           <button
@@ -84,11 +97,16 @@ class Login extends React.Component {
             disabled={ !this.validateInputs() }
             onClick={ this.handleClick }
           >
-            Jogar
+            {EntrarLoading}
           </button>
           <SettingsBtn />
+          <p>Ou continue com</p>
+          <div>
+            <img src={ googleLogo } alt="logo google" className="logoSocial" />
+            <img src={ appleLogo } alt="logo apple" className="logoSocial" />
+            <img src={ facebookLogo } alt="logo facebook" className="logoSocial" />
+          </div>
         </Form>
-        { isLoading && (<p>Carregando...</p>)}
       </Container>
     );
   }

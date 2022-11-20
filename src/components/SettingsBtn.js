@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import gear from '../assets/gear.png';
+import gear from '../assets/gearT.png';
 
 export default function SettingsBtn() {
   const history = useHistory();
