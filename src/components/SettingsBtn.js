@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import gear from '../assets/gear.png';
 
 export default function SettingsBtn() {
   const history = useHistory();
@@ -14,7 +15,7 @@ export default function SettingsBtn() {
       data-testid="btn-settings"
       onClick={ handdleClick }
     >
-      Settings
+      <img src={ gear } alt="gear" className="gear" />
 
     </button>
   );

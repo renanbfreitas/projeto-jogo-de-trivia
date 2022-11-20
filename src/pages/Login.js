@@ -3,6 +3,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchTokenAPI, userLogin } from '../redux/actions';
 import SettingsBtn from '../components/SettingsBtn';
+import { Container, Form } from './styles/styles';
+import logo from '../trivia.png';
 
 class Login extends React.Component {
   constructor() {
@@ -49,27 +51,28 @@ class Login extends React.Component {
     const { isLoading, error } = this.props;
     if (error) return 'Algo deu errado!';
     return (
-      <div>
-        <form>
+      <Container>
+        <Form>
+          <img src={ logo } alt="logo" className="logo" />
           <label htmlFor="password">
-            Nome
+
             <input
               type="text"
               name="name"
               id="name"
-              placeholder="Digite seu nome"
+              placeholder="Nome"
               value={ name }
               onChange={ this.handleInput }
               data-testid="input-player-name"
             />
           </label>
           <label htmlFor="email">
-            Email
+
             <input
               type="email"
               name="email"
               id="email"
-              placeholder="Digite o seu e-mail"
+              placeholder="Email"
               value={ email }
               onChange={ this.handleInput }
               data-testid="input-gravatar-email"
@@ -84,9 +87,9 @@ class Login extends React.Component {
             Jogar
           </button>
           <SettingsBtn />
-        </form>
+        </Form>
         { isLoading && (<p>Carregando...</p>)}
-      </div>
+      </Container>
     );
   }
 }
