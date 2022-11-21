@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { resetGame } from '../redux/actions';
+import logo from '../trivia.png';
+import { Container } from './styles/ranking.style';
 
 class Ranking extends Component {
   handleReset = () => {
@@ -12,19 +14,38 @@ class Ranking extends Component {
 
   render() {
     return (
-      <>
-        <h1 data-testid="ranking-title">Ranking</h1>
+      <Container>
+        <img src={ logo } alt="logo" className="logo" />
+        <h1 className="ranking-text" data-testid="ranking-title">Ranking</h1>
         {console.log(JSON.parse(localStorage.getItem('ranking')))}
         <section id="section">
           {
             JSON.parse(localStorage.getItem('ranking')) !== null
             && JSON.parse(localStorage.getItem('ranking'))
               .map((pessoa, index) => (
-                <div key={ index }>
-                  <p data-testid={ `player-score-${index}` }>{pessoa.score}</p>
-                  <p data-testid={ `player-name-${index}` }>{pessoa.name}</p>
-                  <img src={ pessoa.picture } alt="fotoGravatar" />
-                </div>
+                <>
+                  <div key={ index }>
+                    <div className="img-score">
+                      <img className="img" src={ pessoa.picture } alt="fotoGravatar" />
+                      <p
+                        className="score"
+                        data-testid={ `player-score-${index}` }
+                      >
+                        <h4>Pontuação:</h4>
+                        <p className="scoreTotal">{pessoa.score}</p>
+
+                      </p>
+                    </div>
+                    <p
+                      className="name"
+                      data-testid={ `player-name-${index}` }
+                    >
+                      {pessoa.name}
+
+                    </p>
+                  </div>
+                  <hr />
+                </>
               ))
           }
         </section>
@@ -35,7 +56,7 @@ class Ranking extends Component {
         >
           Início
         </button>
-      </>
+      </Container>
 
     );
   }
