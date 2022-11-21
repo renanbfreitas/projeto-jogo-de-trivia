@@ -95,11 +95,12 @@ class Game extends Component {
             />
             { next && (
               <button
+                className="nexButton"
                 type="button"
                 data-testid="btn-next"
                 onClick={ this.handleClick }
               >
-                Next
+                Próxima
               </button>
             )}
           </>

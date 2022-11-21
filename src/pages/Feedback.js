@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import { resetGame } from '../redux/actions';
 
 class Feedback extends React.Component {
@@ -16,9 +16,16 @@ class Feedback extends React.Component {
     const minimumScore = 3;
     return (
       <>
-        <Header />
-        <p data-testid="feedback-total-score">{ score }</p>
-        <p data-testid="feedback-total-question">{ assertionsScore }</p>
+        {/* <Header /> */}
+        <p data-testid="feedback-total-score">
+          <p>Pontuação Total</p>
+          { score }
+        </p>
+        <p data-testid="feedback-total-question">
+          Respostas corretas
+          {' '}
+          { assertionsScore }
+        </p>
         <p data-testid="feedback-text">
           { assertionsScore >= minimumScore ? 'Well Done!' : 'Could be better...' }
         </p>
