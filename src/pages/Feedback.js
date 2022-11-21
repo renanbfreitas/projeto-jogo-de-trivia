@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // import Header from '../components/Header';
 import { resetGame } from '../redux/actions';
+import { Container } from './styles/feedback.style';
 
 class Feedback extends React.Component {
   handleReset = () => {
@@ -15,18 +16,17 @@ class Feedback extends React.Component {
     const { assertionsScore, score, history } = this.props;
     const minimumScore = 3;
     return (
-      <>
+      <Container>
         {/* <Header /> */}
-        <p data-testid="feedback-total-score">
-          <p>Pontuação Total</p>
-          { score }
-        </p>
-        <p data-testid="feedback-total-question">
-          Respostas corretas
-          {' '}
-          { assertionsScore }
-        </p>
-        <p data-testid="feedback-text">
+        <div data-testid="feedback-total-score">
+          <p className="textLarge">Pontuação Total</p>
+          <p>{ score }</p>
+        </div>
+        <div data-testid="feedback-total-question">
+          <p className="textLarge-2">Respostas corretas</p>
+          <p>{ assertionsScore }</p>
+        </div>
+        <p className="msg" data-testid="feedback-text">
           { assertionsScore >= minimumScore ? 'Well Done!' : 'Could be better...' }
         </p>
         <button
@@ -43,7 +43,7 @@ class Feedback extends React.Component {
         >
           Ranking
         </button>
-      </>
+      </Container>
 
     );
   }
