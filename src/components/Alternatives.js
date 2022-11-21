@@ -44,7 +44,7 @@ class Alternatives extends Component {
           {questions[index].category}
         </p>
         <p className="question-text" data-testid="question-text">
-          {questions[index].question}
+          {questions[index].question.replaceAll('&quot;', '"').replaceAll('&#039;', '\'')}
         </p>
         <hr />
         <div className="answers">
