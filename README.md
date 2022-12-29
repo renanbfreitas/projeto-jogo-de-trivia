@@ -30,8 +30,10 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg"
 
 <img src="https://img.shields.io/static/v1?label=Equipe&message=Colaboradores&color=brown&style=for-the-badge&logo=github"/>
 
+### <b> <a href="https://github.com/AnthonyDSValerio">Anthony Valerio</a> </b> <br>
 ### <b> <a href="https://github.com/lzaghi">Lucca Zaghi</a> </b> <br>
-
+### <b> <a href="https://github.com/markallenarchviz">Mark Allen</a> </b> <br>
+### <b> <a href="https://github.com/Matheus-Repizo">Matheus Repizo</a> </b> <br>
 
 </p>
 
