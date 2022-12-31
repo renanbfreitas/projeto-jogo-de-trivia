@@ -24,7 +24,7 @@ src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg"
 
 <img src="https://img.shields.io/static/v1?label=Link&message=Jogo de Trivia&color=green&style=for-the-badge&logo=github"/>
 
-### <b> <a href="https://renanbfreitas.github.io/projeto-jogo-de-trivia/">Jogo de Trivia</a> </b> <br>
+### <b> <a href="https://projeto-jogo-de-trivia.vercel.app/">Jogo de Trivia</a> </b> <br>
 
 ---   
 
